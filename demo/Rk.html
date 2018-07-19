@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>11</title>
+	</head>
+	<script>
+		(function(doc, win) {
+			var docEl = doc.documentElement,
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function() {
+					var clientWidth = docEl.clientWidth;
+					if (!clientWidth) return;
+					if (clientWidth > 768) {
+						clientWidth = 768;
+					}
+					docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+				};
+			if (!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+			doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+	<style>
+		html,
+		body {
+			height: 100%;
+			margin: 0px; 
+		}
+		
+		#main {
+			position: relative;
+			margin: 0 auto;
+			overflow: hidden;
+			width: 7.5rem;
+		 
+			background: #ec5054;
+		}
+		
+		.container {
+			width: 7.5rem;
+			height: 100%;
+			margin: 0 auto;
+			position: relative;
+		}
+		
+		img {
+			display: block;
+		}
+		
+		.container_Show-01 {
+			background: url(img/p_content_bg.jpg) no-repeat #ec5054;
+			width: 90%;
+			height:7.5rem;
+			background-size: 100%;
+			margin: 0 auto;
+			position: relative;
+			line-height: 150%;
+		}
+		
+		.container_Show-01-New {
+			position: relative;
+			top: .94rem;
+			width: 5.72rem;
+		 
+			overflow: hidden;
+			border-radius: 2%;
+			height: 6rem;
+			background: #fff7ac;
+			font-size: .26rem;
+			text-align: center;
+			overflow: scroll;
+			left: 0.44rem;
+		}
+		
+		.container_Show-01-New p {
+			width: 5rem;
+			vertical-align: middle;
+			padding-top: 18px;
+			line-height: 1.14rem;
+			text-align: left;
+			border-bottom: 1px solid #ff9f65;
+			margin: 0 5%;
+		}
+		
+		.container_Show-01-New span {
+			display: inline-block;
+			width: .76rem;
+			height: .78rem;
+			vertical-align: middle;
+			padding-right: 20px;
+			line-height: .78rem;
+		}
+		
+		.container_Show-01-New .active {
+			color: #fff7ac;
+			background: #3b3271;
+			text-align: center;
+			display: inline-block;
+			width: .36rem;
+			height: .36rem;
+			line-height: .36rem;
+			border-radius: .36rem;
+			vertical-align: middle;
+		}
+		
+		.container_Show-01-New em {
+			color: #3c3374;
+			padding-left: 20px;
+			vertical-align: middle;
+		}
+		
+		.container_Show-01-New .out {
+			padding-left: 0.8rem;
+		}
+	</style>
+  
+	<link rel="stylesheet" href="css/global_1.css" />
+
+	<body>
+		<div id="main">
+			<div class="container">
+				<img src="images/img/p_bg.jpg"/>
+				<div class="container_Show-01">
+					<div class="container_Show-01-New clearfix">
+						<p><span><img src="images/img/p_img.jpg"></span><i class="active">1</i>
+							<em>用户名</em>
+							<em class="out">发车数: 10</em>
+						</p>
+						<p><span><img src="images/img/p_img.jpg"></span><i class="active">1</i>
+							<em>用户名</em>
+							<em class="out">发车数: 10</em>
+						</p>
+						<p><span><img src="images/img/p_img.jpg"></span><i class="active">1</i>
+							<em>用户名</em>
+							<em class="out">发车数: 10</em>
+						</p>
+						<p><span><img src="images/img/p_img.jpg"></span><i class="active">1</i>
+							<em>用户名</em>
+							<em class="out">发车数: 10</em>
+						</p>
+						<p><span><img src="images/img/p_img.jpg"></span><i class="active">1</i>
+							<em>用户名</em>
+							<em class="out">发车数: 10</em>
+						</p>
+						<p><span><img src="images/img/p_img.jpg"></span><i class="active">1</i>
+							<em>用户名</em>
+							<em class="out">发车数: 10</em>
+						</p>
+						<p><span><img src="images/img/p_img.jpg"></span><i class="active">1</i>
+							<em>用户名</em>
+							<em class="out">发车数: 10</em>
+						</p>
+						<p><span><img src="images/img/p_img.jpg"></span><i class="active">1</i>
+							<em>用户名</em>
+							<em class="out">发车数: 10</em>
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改文本框的值</title>
+    <style>
+                html, body, div, ul {
+            margin: 0;
+            padding: 0;
+        }
+         img {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+        div{
+        	width: 569px;
+        }
+        h2{
+        	background: #74A400;
+        	color: white;
+        	margin: 0;
+        	font-size: 16px;
+        	line-height: 30px;
+        	font-weight: bold;
+        	vertical-align: middle;
+        	text-indent: 20px;
+        }
+        li{
+        	text-decoration: none;
+        	border-bottom: 1px solid #eee;
+        	line-height: 40px;
+        }
+        li p{
+        	display: inline-block;
+        	color: gray;
+        	font-size: 16px;
+        	line-height: 40px;
+        	text-indent: 20px;
+        	margin: 0;
+        }
+        input{
+        	line-height: 22px;
+        	font-size: 16px;
+        	vertical-align: middle;
+        	padding:  0 2px;
+        	margin-left: 16px;
+        }
+        li span{
+        	    font-size: 16px;
+        	    font-weight: bold;
+        		color: #74A400;
+        		cursor: pointer;
+        	 padding: 0 3px;
+        }
+        .hide{
+        	display: none;
+        }
+    </style>
+     <script>
+     	window.onload=function(){
+     	 
+                
+                
+     		var OUl=document.getElementById("list");
+     		var aLi=OUl.getElementsByTagName('li');
+     		var oimg=OUl.getElementsByTagName('img');
+     		var aInp=OUl.getElementsByTagName('input');
+     		var aP=OUl.getElementsByTagName('p');
+     		var aSpan=OUl.getElementsByTagName('span');
+     		
+     		/*初始化页面*/
+     		for(var i=0;i<aInp.length;i++){
+     			aInp[i].value=aP[i].innerHTML;
+     			aInp[i].className='hide';
+     		}
+     		for(var i=0;i<aSpan.length;i++){
+     			 aSpan[i].className='hide';
+     		}
+     		
+     		for(var i=0;i<oimg.length;i++){
+     			edit(aLi[i]);
+     			
+     		}
+     		
+     		function edit(li){
+     			var Op=li.getElementsByTagName('p')[0];
+     			var Oimg=li.getElementsByTagName('img')[0];
+     			var oInp=li.getElementsByTagName('input')[0];
+     			var oSpan1=li.getElementsByTagName('span')[0];
+     			var oSpan2=li.getElementsByTagName('span')[1];
+     			
+     			Oimg.onclick=function(){
+     				Op.className=Oimg.className='hide';
+     				oInp.className=oSpan1.className=oSpan2.className='';
+     			}
+     			oSpan1.onclick=function(){
+     				Op.innerHTML=oInp.value;
+     				Op.className=Oimg.className='';
+     				oInp.className=oSpan1.className=oSpan2.className='hide';
+     			}
+     			oSpan2.onclick=function(){
+     				Op.className=Oimg.className='';
+     				oInp.className=oSpan1.className=oSpan2.className='hide';
+     			}
+     		}
+     	}
+     	
+     </script>
+</head>
+<body>
+    <div>
+        <h2>分类名称</h2>
+        <ul id="list">
+            <li>
+                <p>WebF4</p>
+                <img src="images/leo/pen.png" alt="pen">
+                <input type="text" value="" class="hide" />
+                <span>保存</span>
+                <span>取消</span>
+            </li>
+            <li>
+                <p>WebF4</p>
+                <img src="images/leo/pen.png"  alt="pen">
+                <input type="text" value=""  class="hide"/>
+                <span>保存</span>
+                <span>取消</span>
+            </li>
+        </ul>
+    </div>
+    
+</html>

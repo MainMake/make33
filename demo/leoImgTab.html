@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				background: #000000;
+			}
+			
+			#container {
+				width: 400px;
+				height: 500px;
+				margin: 0 auto;
+				position: relative;
+				border: 1px solid #fff;
+			}
+			
+			#container img {
+				width: 400px;
+				height: 500px;
+			}
+			
+			#list {
+				width: 120px;
+				margin: 0 auto;
+				position: absolute;
+				left: 50%;
+				top: 520px;
+				margin-left: -60px;
+			}
+			
+			#list li {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				background: gray;
+				border-radius: 20px;
+				cursor: pointer;
+				margin: 0 5px;
+				position: relative;
+			}
+			
+			#list li.active {
+				background: #FFCC33;
+			}
+			
+			a {
+				color: #fff;
+				text-decoration: none;
+			}
+			
+			#prev,
+			#next {
+				position: absolute;
+				height: 40px;
+				width: 40px;
+				border-radius: 40px;
+				line-height: 40px;
+				color: white;
+				text-align: center;
+				font-size: 30px;
+				background: #ea7c1c;
+				opacity: 0.4;
+				filter: alpha(opacity: 40);
+				top: 50%;
+				margin-top: -20px;
+				text-decoration: none;
+			}
+			
+			#next {
+				right: 10px;
+			}
+			
+			#prev {
+				left: 10px;
+			}
+			
+			#prev:hover,
+			#next:hover {
+				opacity: 1;
+			}
+			
+			#list li .mini {
+				position: absolute;
+				width: 40px;
+				height: 48px;
+				bottom: 25px;
+				border: 2px solid #c2ead7;
+				left: -12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id=container>
+			<img src="images/leo/1.png" />
+			<a id="prev" href="javascript:">&lt;</a>
+			<a id="next" href="javascript:">&gt;</a>
+			<ul id="list">
+
+			</ul>
+		</div>
+	</body>
+	<script>
+		var ODiv = document.getElementById("container");
+		var OImg = ODiv.getElementsByTagName('img')[0];
+		var OPrev = document.getElementById('prev');
+		var Onext = document.getElementById("next");
+		var List = document.getElementById("list");
+		var aLi = List.getElementsByTagName('li');
+		var num = 0;
+		var arrimg = ['images/leo/1.png', 'images/leo/2.png', 'images/leo/3.png', 'images/leo/4.png'];
+
+		for(var i = 0; i < arrimg.length; i++) {
+			List.innerHTML += '<li></li>';
+		}
+		//初始化
+		function info() {
+			OImg.src = arrimg[num];
+			aLi[num].className = 'active';
+		}
+		info();
+		//附加索引值点击事件
+		for(var i = 0; i < aLi.length; i++) {
+			aLi[i].index = i;
+			aLi[i].onclick = function() {
+				clearClass();
+				num = this.index;
+				info();
+			}
+			aLi[i].onmouseover = function() {
+				aLi[this.index].innerHTML = '<img class="mini" src=' + arrimg[this.index] + '/>';
+			}
+			aLi[i].onmouseout = function() {
+				aLi[this.index].innerHTML = '';
+			}
+		}
+
+		Onext.onclick = function() {
+			num++;
+			if(num > (arrimg.length - 1)) {
+				num = 0;
+			};
+			clearClass();
+			info();
+		}
+
+		OPrev.onclick = function() {
+			num--;
+			if(num < 0) {
+				num = arrimg.length - 1;
+
+			}
+			clearClass(); 
+			info();
+		}
+
+		function clearClass() {
+			for(var i = 0; i < aLi.length; i++) {
+				aLi[i].className = '';
+			}
+		}
+	</script>
+
+</html>

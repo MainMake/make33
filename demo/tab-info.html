@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,
+			ul,
+			li,
+			h2 {
+				padding: 0;
+				margin: 0;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			#tabs {
+				width: 960px;
+				background: gainsboro;
+				overflow: hidden;
+			}
+			
+			#nav {
+				float: left;
+				width: 148px;
+			}
+			
+			#nav li {
+				width: 148px;
+				height: 82px;
+				border: 1px solid #eee;
+				text-align: center;
+				line-height: 80px;
+				font-size: 12px;
+				font-weight: bold;
+				cursor: pointer;
+			}
+			
+			#contents {
+				float: right;
+				width: 810px;
+				height: 335px;
+				position: relative;
+			}
+			
+			#contents img {
+				width: 810px;
+				height: 335px;
+			}
+			
+			#contents ul {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				text-align: justify;
+				background: #fff;
+				opacity: 0.8;
+				display: none;
+			}
+			
+			#contents ul li {
+				line-height: 30px;
+				text-align: center;
+				border: 1px solid #eee;
+				padding: 0 20px;
+				cursor: pointer;
+				display: table-cell;
+			}
+			
+			.selected {
+				background: #eee;
+			}
+			
+			#contents ul.show {
+				display: table;
+			}
+			
+			#contents li.active {
+				background: red;
+				opacity: 0.7;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="tabs">
+			<ul id="nav">
+				<li class="selected">最热团购</li>
+				<li>商城特惠</li>
+				<li>名品推荐</li>
+				<li>缤纷活动</li>
+			</ul>
+			<div id="contents">
+				<img src="images/x1-img/a1-1.png">
+				<ul class="show">
+					<li class="active">最热团购Tab11</li>
+					<li>最热团购Tab1</li>
+					<li>最热团购Tab1</li>
+				</ul>
+				<img src="images/x1-img/a2-1.png" />
+				<ul>
+					<li class="active">2</li>
+					<li>2</li>
+					<li>2</li>
+				</ul>
+				<img src="images/x1-img/a3-1.png" />
+				<ul>
+					<li class="active">3</li>
+					<li>3</li>
+					<li>3</li>
+				</ul>
+				<img src="images/x1-img/a4-1.png" />
+				<ul>
+					<li class="active">4</li>
+					<li>4</li>
+					<li>4</li>
+				</ul>
+
+			</div>
+		</div>
+		<script>
+			window.onload = function() {
+				var arrImg = [
+					['images/x1-img/a1-1.png', 'images/x1-img/a1-2.png', 'images/x1-img/a1-3.png'],
+					['images/x1-img/a2-1.png', 'images/x1-img/a2-2.png', 'images/x1-img/a2-3.png'],
+					['images/x1-img/a3-1.png', 'images/x1-img/a3-2.png', 'images/x1-img/a3-3.png'],
+					['images/x1-img/a4-1.png', 'images/x1-img/a4-2.png', 'images/x1-img/a4-3.png']
+				];
+
+				var Nav = document.getElementById("nav"); //左侧侧边栏
+				var aLi = Nav.getElementsByTagName('li');
+				var oContent = document.getElementById("contents")
+				var aUl = oContent.getElementsByTagName('ul');
+				var aImg = oContent.getElementsByTagName('img');
+				var num = 0;
+				var aSubLi = aUl[0].getElementsByTagName('li');
+
+				fnSmallTab(aUl[0]);
+
+				for(var i = 0; i < aLi.length; i++) {
+					aLi[i].index = i;
+					aLi[i].onclick = function() {
+						for(var i = 0; i < aLi.length; i++) {
+							num = this.index;
+							aLi[i].className = '';
+							aUl[i].className = '';
+							aImg[i].style.display = 'none';
+						}
+						this.className = 'selected';
+						aUl[num].className = 'show';
+						aImg[num].style.display = 'block';
+
+						fnSmallTab(aUl[num]);
+					}
+				}
+
+				function fnSmallTab(smallUl) {
+					lis = smallUl.getElementsByTagName('li');
+					for(var i = 0; i < lis.length; i++) {
+						if(lis[i].className) {
+							aImg[num].src = arrImg[num][i];
+						}
+						lis[i].index = i;
+						lis[i].onclick = function() {
+							for(var i = 0; i < lis.length; i++) {
+								lis[i].className = '';
+							}
+							this.className = 'active';
+							aImg[num].src = arrImg[num][this.index];
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

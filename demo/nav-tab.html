@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>记录片</title>
+		<style>
+			@charset "utf-8";
+
+/*样式重置*/
+
+
+/*html,body { user-select: none; -moz-user-select: none; -webkit-user-select: none; }*/
+ 
+			body,h2,ul,span,p{ margin: 0; padding: 0;}
+			li{list-style: none;}
+			#ranking{ width: 280px; overflow: hidden; background-color:#dee7e7; padding-left: 5px; padding-right: 8px;}
+			#ranking h2{ float: left; height: 38px; line-height: 38px; font-size: 18px; color: #2c4c5d; padding-left: 13px; padding-right: 43px;border-bottom: 1px solid #b4cfdd;}
+			#ranking #tabNav{ overflow: hidden; margin-top: 13px;}
+			#ranking #tabNav li{float: left; font-size: 12px; line-height: 24px;height: 24px; border: 1px solid #b4cfdd; color: #497790; cursor: pointer; padding: 0 6px; border-right: 0;}
+			#ranking #tabNav .active{ font-weight: bold; background-color: #fff;}
+			#ranking #tabNav li:last-child{ border-right: 1px solid #B4CFDD;}
+			#tabContent{clear: left;}
+			#tabContent{line-height: 28px; font-size: 12px; }
+			#tabContent li{ border-bottom: 1px dashed #fff; cursor: pointer; position: relative;}
+			#tabContent ul li span{position: absolute;height: 14px;line-height: 18px;width: 18px;text-align: center;background-color:#1A68A2 ;color: #fff;font-size: 8px;font-weight: bold;left: 6px;top: 6px;z-index: 1;}
+			#tabContent  li a{ text-decoration: none; color: #000; display: inline-block; margin-left: 40px;}
+			#tabContent ul div{height: 82px; background: #fff; overflow: hidden;display: none;}
+		    #dailiy,#monthly,#all{display: none;}
+		    .show{display: block !important;}
+			#tabContent ul li:last-child{text-align: right; border: none;}
+			#tabContent div img{height: 70px;border: 1px solid #000; float: left; margin: 6px; margin-left: 30px; }
+			#tabContent div p{float: left;width: 150px;line-height: 16px;padding-top: 10px;}
+			#tabContent div a{position: absolute; color: #fff; background: #1A68A2; font-size: 10px; line-height: 20px; right: 10px; bottom: 4px; padding: 0 6px;}
+		</style>
+	</head>
+	<body>
+		<div id="ranking">
+			<h2>观看排行榜</h2>
+			<ul id="tabNav">
+				<li class="active">每日</li>
+				<li>每周</li>
+				<li>全部</li>
+			</ul>
+			<div id="tabContent">
+				 <ul id="dailiy" class="show">
+				 	<li>
+				 		<span>1</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">解密：关于地球与人类的一千零一问</a>
+				 		<div><img src="images/leo/pen.png"><p>解密：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>2</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">经典传奇：探索全世界重大历史事件</a>
+				 		<div><img src="images/leo/pen.png"><p>解密：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>3</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">档案（BTV）：惊人事件和传奇背...</a>
+				 		<div><img src="images/leo/pen.png"><p>解密：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>4</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">世界十最：30个震惊世界的Top...</a>
+				 		<div><img src="images/leo/pen.png"><p>解密：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>5</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">身边的毛泽东：警卫员解密毛泽东秘...</a>
+				 		<div><img src="images/leo/pen.png"><p>解密：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>6</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">新电影传奇：每一步电影都有自己的...</a>
+				 		<div><img src="images/leo/pen.png"><p>解密：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>7</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">档案（上视纪实频道）：解密档案中...</a>
+				 		<div><img src="images/leo/pen.png"><p>解密：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>8</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">探寻传世国宝的千古传奇</a>
+				 		<div><img src="images/leo/pen.png"><p>解密：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>9</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">纪实系列：讲述社会百态，透视事实...</a>
+				 		<div><img src="images/leo/pen.png"><p>解密：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>10</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">解密:关于地球与人类的一千零一问</a>
+				 		<div><img src="images/leo/pen.png"><p>解密：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<a href="#" style="display: block;">更多>></a>
+				 	</li>
+				 </ul>
+				 <ul id="monthly">
+				 	<li>
+				 		<span>1</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">每周: 关于地球与人类的一千零一问</a>
+				 		<div><img src="images/leo/pen.png"><p>每周：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>2</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">每周: 经典传奇：探索全世界重大历史事件</a>
+				 		<div><img src="images/leo/pen.png"><p>每周: 关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>3</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">每周: 档案（BTV）：惊人事件和传奇背...</a>
+				 		<div><img src="images/leo/pen.png"><p>每周: 关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>4</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">每周: 世界十最：30个震惊世界的Top...</a>
+				 		<div><img src="images/leo/pen.png"><p>每周: 关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>5</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">每周: 身边的毛泽东：警卫员解密毛泽东秘...</a>
+				 		<div><img src="images/leo/pen.png"><p>每周: 关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>6</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">每周: 新电影传奇：每一步电影都有自己的...</a>
+				 		<div><img src="images/leo/pen.png"><p>每周: 关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>7</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">每周: 档案（上视纪实频道）：解密档案中...</a>
+				 		<div><img src="images/leo/pen.png"><p>每周: 关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>8</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">每周: 探寻传世国宝的千古传奇</a>
+				 		<div><img src="images/leo/pen.png"><p>每周: 关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>9</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">每周: 纪实系列：讲述社会百态，透视事实...</a>
+				 		<div><img src="images/leo/pen.png"><p>每周: 关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>10</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">每周: 解密:关于地球与人类的一千零一问</a>
+				 		<div><img src="images/leo/pen.png"><p>每周: 关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<a href="#" style="display: block;">更多>></a>
+				 	</li>
+				 </ul>
+				 <ul id="all" >                                                                                                                                                    
+				 	<li>
+				 		<span>1</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">全部：关于地球与人类的一千零一问</a>
+				 		<div><img src="images/leo/pen.png"><p>全部：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>2</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">全部：经典传奇：探索全世界重大历史事件</a>
+				 		<div><img src="images/leo/pen.png"><p>全部：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>3</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">全部：档案（BTV）：惊人事件和传奇背...</a>
+				 		<div><img src="images/leo/pen.png"><p>全部：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>4</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">全部：世界十最：30个震惊世界的Top...</a>
+				 		<div><img src="images/leo/pen.png"><p>全部：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>5</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">全部：身边的毛泽东：警卫员解密毛泽东秘...</a>
+				 		<div><img src="images/leo/pen.png"><p>全部：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>6</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">全部：新电影传奇：每一步电影都有自己的...</a>
+				 		<div><img src="images/leo/pen.png"><p>全部：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>7</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">全部：档案（上视纪实频道）：解密档案中...</a>
+				 		<div><img src="images/leo/pen.png"><p>全部：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>8</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">全部：探寻传世国宝的千古传奇</a>
+				 		<div><img src="images/leo/pen.png"><p>全部：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>9</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">全部：纪实系列：讲述社会百态，透视事实...</a>
+				 		<div><img src="images/leo/pen.png"><p>全部：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<span>10</span>
+				 		<a href="#" onclick="javascript:" style="display: block;">全部：关于地球与人类的一千零一问</a>
+				 		<div><img src="images/leo/pen.png"><p>全部：关于地球与人类的一千零一问</p>
+				 		<a href="#">播放</a></div>
+				 	</li>
+				 	<li>
+				 		<a href="#" style="display: block;">更多>></a>
+				 	</li>
+				 </ul>
+			</div>
+			 
+		 
+		</div>
+		<script>
+			    var  dailiy=document.getElementById("dailiy");//每日
+			    var  Monthly=document.getElementById("monthly");//每周
+			    var All=document.getElementById("all");//全部
+			    var TabContent=document.getElementById("tabContent");//
+			    var TabNav=document.getElementById("tabNav");
+	            var  ATabNav=TabNav.getElementsByTagName('li');
+	                 aUl=TabContent.getElementsByTagName('ul');
+	             
+	             
+	             
+	            function  fntab(num){
+	            	for(var i=0;i<ATabNav.length;i++){
+	            		ATabNav[i].className='';
+	            		aUl[i].className='';
+	            	}
+	            	ATabNav[num].className='active';
+	            	aUl[num].className='show';
+	            }
+	            
+	            for(var i=0;i<ATabNav.length;i++){
+	            	ATabNav[i].index=i;
+	            	ATabNav[i].onclick=function(){
+	            		num=this.index;
+	            		fntab(num);
+	            	}
+	            }
+			    
+			    for(var i=0;i<aUl.length;i++){
+			    	hover(aUl[i]);
+			    }
+			    
+			    function hover(ul){
+			    	var aLi=ul.getElementsByTagName('li');
+			    	for(var i=0;i<aLi.length;i++){
+			    		aLi[i].onmousemove=function(){
+			    			this.getElementsByTagName('a')[0].style.display='none';
+			    			this.getElementsByTagName('div')[0].style.display='block';
+			    		}
+			    		
+			    		aLi[i].onmouseout=function(){
+			    			 this.getElementsByTagName('a')[0].style.display='block';
+			    			this.getElementsByTagName('div')[0].style.display='none';
+			    		}
+			    	}
+			    	
+			    }
+			
+		</script>
+	</body>
+</html>

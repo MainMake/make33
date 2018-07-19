@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>11</title>
+	</head>
+	<script>
+		(function(doc, win) {
+			var docEl = doc.documentElement,
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function() {
+					var clientWidth = docEl.clientWidth;
+					if (!clientWidth) return;
+					if (clientWidth > 768) {
+						clientWidth = 768;
+					}
+					docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+				};
+			if (!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+			doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+	<link rel="stylesheet" href="css/global_1.css" />
+	<style>
+		.header {
+			width: 7.5rem;
+			height: 4.16rem;
+			background-size: cover;
+			text-align: center;
+			margin: 0 auto;
+		}
+		
+		img {
+			display: block;
+			width: 100%;
+		}
+		
+		.content-01 {
+			width: 7.5rem;
+			position: relative;
+			margin: 0 auto;
+		}
+		
+		.content-01 span {
+			font-size: 0.6rem;
+			color: #c82020;
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			left: 0;
+			top: 1.24rem;
+			font-weight: bold;
+			margin-left: -1%;
+			line-height: 0.6rem;
+		}
+		
+		.content-02 {
+			width: 7.5rem;
+			text-align: center;
+			position: relative;
+			padding-bottom: .36rem;
+			margin: 0 auto;
+		}
+		
+		.content-02 span {
+			position: absolute;
+			top: .28rem;
+			left: 2.68rem;
+			font-size: 0.3rem;
+			color: #f62e48;
+			font-weight: bold;
+			line-height: 0.3rem;
+			text-align: center;
+		}
+		
+		.content-03 {
+			background: #501716;
+			width: 5.9rem;
+			margin: 0 auto;
+		}
+		
+		.content-03-01 {
+			width: 5.9rem;
+			margin: 0 auto;
+			padding-top: 0.2rem;
+			margin-left: 5%;
+			padding-bottom: 0.2rem;
+		}
+		
+		.content-03-01 img {
+			width: 1.24rem;
+		}
+		
+		.content-03-02 {
+			width: 5.9rem;
+			margin: 0 auto;
+			box-shadow: 0px 5px 5px 0 #ac2921;
+		}
+		
+		.content-02 p img:hover {
+			transform: scale3d(0.95, 0.95, 1);
+			cursor: pointer;
+		}
+		
+		.content-03-02 p {
+			font-size: .24rem;
+			color: #fff;
+			text-indent: 5%;
+			margin-bottom: 0.2rem;
+		}
+		
+		#main {
+			position: relative;
+			height: 100%;
+			margin: 0 auto;
+			overflow: hidden;
+			width: 7.5rem;
+			background: #d73329;
+		}
+		
+		.container_Show {
+			width: 7.5rem;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.6);
+			z-index: 101;
+			display: none;
+		}
+		
+		.container_Show-01 {
+			width: 4.84rem;
+			left: 50%;
+			position: relative;
+			top: 0%;
+			margin: 0 auto;
+			margin-left: -2.42rem;
+			opacity: 0;
+		}
+		
+		.container_Show-02 {
+			position: absolute;
+			width: .30rem;
+			height: .30rem;
+			right: .48rem;
+			top: 1px;
+			text-align: center;
+		}
+		
+		.container_Show-02 img {
+			width: .30rem;
+			height: .30rem;
+			line-height: .30rem;
+		}
+		
+		.container_Show-02-money {
+			position: absolute;
+			width: 4.84rem;
+			text-align: center;
+			top: 2.75rem;
+			color: #ff573a;
+			font-size: .5rem;
+		}
+		
+		.container_Show-02-btn {
+			position: absolute;
+			width: 4.1rem;
+			text-align: center;
+			bottom: 0.74rem;
+			left: 7%;
+			color: #ff573a;
+			font-size: .5rem;
+		}
+	</style>
+  <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+  <script>
+  		$(function(){
+  		      $('.content-02 img').click(function(){
+  		      	$('.container_Show').css("display","block");
+  		      	$('.container_Show-01').animate({top:"15%",opacity:1});
+  		      })
+  		      
+  		      $('.container_Show-02 img').click(function(){
+  		      	$('.container_Show').css("display","none");
+  		      	$('.container_Show-01').animate({top:"0",opacity:0});
+  		      })
+  		
+  		
+  		})
+  </script>
+	<body>
+		<div id="main">
+			<div class="container_Show">
+				<div class="container_Show-01">
+					<div class="container_Show-02">
+						<img src="images/img/12.png" />
+					</div>
+					<div class="container_Show-02-money">
+						+7
+					</div>
+					<div class="container_Show-02-btn">
+						<img src="images/img/hide_btn.png" />
+					</div>
+					<img src="images/img/content_Show.png" />
+				</div>
+			</div>
+			<div class="header">
+				<img src="images/img/banner_log.jpg" />
+			</div>
+			<div class="content-01">
+				<span>10000</span>
+				<p><img src="images/img/content_logo.jpg"></p>
+			</div>
+			<div class="content-02">
+				<p><img src="images/img/content_btn.jpg"></p>
+				<span>10</span>
+			</div>
+			<div class="content-03">
+				<div class="content-03-01"><img src="images/img/content_h1.jpg"></div>
+				<div class="content-03-02">
+					<p>1.本活动由大牛军团解释;</p>
+					<p>2.本活动由大牛军团解释;</p>
+					<p>3.本活动由大牛军团解释;</p>
+					<p>4.本活动由大牛军团解释;</p>
+					<p>5.本活动由大牛军团解释;</p>
+					<p>6.本活动由大牛军团解释;</p>
+					<p>7.本活动由大牛军团解释;</p>
+					<p>7.本活动由大牛军团解释;</p>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

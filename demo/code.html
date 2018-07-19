@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>无标题文档</title>
+
+		<script>
+			var arr = ['100px', 'abc' - 6, [], -98765, 34, -2, 0, '300', , function() {
+				alert(1);
+			}, null, document, [], true, '200px' - 30, '23.45元', 5, Number('abc'), function() {
+				alert(3);
+			}, 'xyz' - 90];
+
+			/*
+				1、找到arr里所有的数字：-98765, 34, -2, 0, 5
+				2、找到可以转成数字的：'100px', -98765, 34, -2, 0, '300', '23.45元',  5 
+				3、把转成数字以后，最大值判断出来：300
+				4、把 NaN 所在的位置找出来：1 14 17  19
+			*/
+			window.onload = function() {
+				var arr = ['100px', 'abc' - 6, [], -98765, 34, -2, 0, '300', , function() {
+					alert(1);
+				}, null, document, [], true, '200px' - 30, '23.45元', 5, Number('abc'), function() {
+					alert(3);
+				}, 'xyz' - 90];
+
+				var Obtn1 = document.getElementsByTagName('input')[0];
+				var Obtn2 = document.getElementsByTagName('input')[1];
+				var Obtn3 = document.getElementsByTagName('input')[2];
+				var Obtn4 = document.getElementsByTagName('input')[3];
+				var OResult = document.getElementById("result");
+				var list1 = [];
+				list2 = [];
+				list3 = [];
+				list4=[]
+				//IsNaN 找到所有数字
+				function isNumber() {
+					OResult.innerHTML = '';
+					list1 = [];
+					for(var i = 0; i < arr.length; i++) {
+						if(typeof(arr[i]) === 'number' && !isNaN(arr[i])) {
+							list1.push(arr[i]);
+
+						}
+					}
+					for(var i = 0; i < list1.length - 1; i++) {
+						OResult.innerHTML += list1[i] + ', ';
+
+					}
+					OResult.innerHTML += list1[list1.length - 1];
+
+				}
+				Obtn1.onclick = function() {
+					isNumber();
+				}
+
+				//parseFloat 找到可以转成数字
+				function isNumberable() {
+					OResult.innerHTML = '';
+					list2 = [];
+					for(var i = 0; i < arr.length; i++) {
+						if(parseFloat(arr[i]) || parseFloat(arr[i]) === 0) {
+							list2.push(arr[i]);
+						}
+					}
+					for(var i = 0; i < list2.length; i++) {
+						OResult.innerHTML += list2[i] + ' ,';
+					}
+				}
+				Obtn2.onclick = function() {
+					isNumberable();
+				}
+
+				//找出max最大值
+				function isNuberMax() {
+					OResult.innerHTML = '';
+					list3 = [];
+					for(var i = 0; i < arr.length; i++) {
+						if(parseFloat(arr[i]) || parseFloat(arr[i]) === 0) {
+							list3.push(arr[i]);
+						}
+					}
+					max = parseFloat(list3[0]);
+					for(var i = 0; i < list3.length - 1; i++) {
+						if(max < parseFloat(list3[i])) {
+							max = parseFloat(list3[i]);
+						}
+
+					}
+					OResult.innerHTML = max;
+				}
+				Obtn3.onclick = function() {
+					isNuberMax();
+				}
+               ///找NAN的下标位置
+				function nanLocation() {
+					OResult.innerHTML = '';
+					list4 = [];
+					for(var i = 0; i < arr.length; i++) {
+						if(typeof(arr[i]) === 'number' && isNaN(arr[i])) {
+							list4.push(i);
+						 
+						}
+					}
+					for(var i = 0; i < (list4.length - 1); i++) {
+						OResult.innerHTML += list4[i] + ', ';
+					}
+					OResult.innerHTML += list4[list4.length - 1];
+				}
+
+				Obtn4.onclick = function() {
+					nanLocation();
+				}
+
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<p>
+			arr = [ '100px', 'abc'-6, [], -98765, 34, -2, 0, '300', , function(){alert(1);}, null, document, [], true, '200px'-30,'23.45元', 5, Number('abc'), function(){ alert(3); }, 'xyz'-90 ];
+		</p>
+		<ol>
+			<li>找到arr里所有的数字：-98765, 34, -2, 0, 5                 </li>
+			<li>找到可以转成数字的：'100px', -98765, 34, -2, 0, '300', '23.45元', 5 </li>
+			<li>把转成数字以后，最大值判断出来：300</li>
+			<li>把 NaN 所在的位置找出来：1 14 17 19</li>
+		</ol>
+		<input type="button" value="找到arr里所有的数字">
+		<input type="button" value="找到可以转成数字的">
+		<input type="button" value="把转成数字以后，最大值判断出来">
+		<input type="button" value="把 NaN 所在的位置找出来">
+		<p id="result"></p>
+
+	</body>
+
+</html>
