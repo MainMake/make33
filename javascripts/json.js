@@ -92,8 +92,8 @@ var Json = {
             name:'new门户整站',
             date:'2018',
             detail:'php+js+swpier+css3 自适应',
-            image:['images/jsonImages/wp1.png','images/jsonImages/wp2.png','images/jsonImages/wp3.png','images/jsonImages/wp4.png'],
-            link:'http://211.152.52.106/price' 
+            image:['images/jsonImages/new1.png','images/jsonImages/new2.png','images/jsonImages/new3.png','images/jsonImages/new4.png'],
+            link:'http://www.21viacloud.com/' 
        }
         
     ],
