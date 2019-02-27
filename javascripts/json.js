@@ -72,7 +72,7 @@ var Json = {
             date:'2017.3',
             detail:'rem抽奖页面',
             image:['images/jsonImages/rk1.png','images/jsonImages/rk2.png','images/jsonImages/rk3.png','images/jsonImages/r666.png'],
-            link:'demo/RK.html' 
+            link:'demo/Rk.html' 
        },
         {
             name:'Rem(codeRandom)',
@@ -94,6 +94,14 @@ var Json = {
             detail:'php+js+swpier+css3 自适应',
             image:['images/jsonImages/new1.png','images/jsonImages/new2.png','images/jsonImages/new3.png','images/jsonImages/new4.png'],
             link:'http://www.21viacloud.com/' 
+       }
+       
+         {
+            name:'sto门户整站',
+            date:'2018',
+            detail:'网站分为PC站，手机站，独立分离。前端使用css+js+jq+swiper+bs' 后端开发是PHP，主要功能是一家公司的详细产品，企业形象等图文介绍,
+            image:['images/jsonImages/new1.png','images/jsonImages/new2.png','images/jsonImages/new3.png','images/jsonImages/new4.png'],
+            link:'http://www.sto.com.cn/' 
        }
         
     ],
