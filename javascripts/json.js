@@ -99,8 +99,8 @@ var Json = {
          {
             name:'sto门户整站',
             date:'2018',
-            detail:'网站分为PC站，手机站，独立分离。前端使用css+js+jq+swiper+bs  后端开发是PHP，主要功能是一家公司的详细产品，企业形象等图文介绍,'
-            image:['images/jsonImages/new1.png','images/jsonImages/new2.png','images/jsonImages/new3.png','images/jsonImages/new4.png'],
+            detail:'网站分为PC站，手机站，独立分离。前端使用css+js+jq+swiper+bs  后端开发是PHP，主要功能是一家公司的详细产品，企业形象等图文介绍',
+            image:['1','2','3'],
             link:'http://www.sto.com.cn/' 
        }
         
