@@ -94,7 +94,7 @@ var Json = {
             detail:'php+js+swpier+css3 自适应',
             image:['images/jsonImages/new1.png','images/jsonImages/new2.png','images/jsonImages/new3.png','images/jsonImages/new4.png'],
             link:'http://www.21viacloud.com/' 
-       }
+       },
        
          {
             name:'sto门户整站',
